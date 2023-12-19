@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 project(ethz_apriltag2)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake/)
@@ -13,8 +13,7 @@ file(GLOB SOURCE_FILES "src/*.cc")
 add_library(${PROJECT_NAME}  ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${catkin_LIBRARIES})
 target_include_directories(${PROJECT_NAME}
-        PUBLIC ${EIGEN3_INCLUDE_DIR}
-        PRIVATE include
+        PUBLIC include ${EIGEN3_INCLUDE_DIR}
 )
 
 # Demo
