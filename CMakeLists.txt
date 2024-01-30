@@ -1,12 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(ethz_apriltag2)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake/)
-
 find_package(Eigen3 REQUIRED NO_MODULE)
 find_package(OpenCV REQUIRED)
-
-add_definitions(-fPIC -O3)
 
 # Library
 file(GLOB SOURCE_FILES "src/*.cc")
