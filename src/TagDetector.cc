@@ -41,11 +41,10 @@ std::vector<TagDetection> TagDetector::extractTags(const cv::Mat &image, int sta
   int width = image.cols;
   int height = image.rows;
   AprilTags::FloatImage fimOrig(width, height);
-  int i = 0;
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
+      int i = y * image.step + x;
       fimOrig.set(x, y, image.data[i] / 255.);
-      i++;
     }
   }
   std::pair<int, int> opticalCenter(width / 2, height / 2);
